@@ -33,7 +33,6 @@ export default function App() {
 
   // search submit
   const onChange = (e) => {
-    console.log('ran', e.target.value);
     setSearch({...searchQuery, 
       query: e.target.value,
     })
@@ -41,8 +40,6 @@ export default function App() {
 
   const onSubmit = (e) => {
     e.preventDefault()
-
-    console.log(e.target[0].value);
 
     setSearch({...searchQuery, 
       searchEndPoint: `${searchQuery.baseUrl}${key}&q=${searchQuery.query}${limitSet}${ratingSet}`, 
@@ -82,8 +79,6 @@ export default function App() {
     }
 
   },[trendQuery, searchQuery, key, selfNavigate])
-
-  console.log(searchQuery.searchData);
 
   return (
     <>
