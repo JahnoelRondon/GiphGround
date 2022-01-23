@@ -33,7 +33,7 @@ export default function App() {
 
   // search submit
   const onChange = (e) => {
-    console.log(e.target.value);
+    console.log('ran', e.target.value);
     setSearch({...searchQuery, 
       query: e.target.value,
     })
@@ -41,6 +41,8 @@ export default function App() {
 
   const onSubmit = (e) => {
     e.preventDefault()
+
+    console.log(e.target[0].value);
 
     setSearch({...searchQuery, 
       searchEndPoint: `${searchQuery.baseUrl}${key}&q=${searchQuery.query}${limitSet}${ratingSet}`, 
@@ -71,7 +73,6 @@ export default function App() {
     }
 
     if(searchQuery.searchEndPoint){
-      console.log('endpoint', searchQuery.searchEndPoint);
       fetchData(searchQuery.searchEndPoint)
       .then(response => setSearch({...searchQuery, 
         searchData: response.data,
@@ -87,19 +88,17 @@ export default function App() {
   return (
     <>
       {/* make search bar a component*/}
-      <form onSubmit={onSubmit} autocomplete="off">
+      <form onSubmit={onSubmit} autoComplete="off">
         <input onChange={onChange} id='query' value={searchQuery.query} type="search" placeholder="Search..."></input>
       </form>
 
-      {/* make a button */}
-      <form onSubmit={onSubmit}> 
-        <select value={searchQuery.query} onChange={onChange}>
-            <option value="grapefruit">Grapefruit</option>
-            <option value="lime">Lime</option>
-            <option value="coconut">Coconut</option>
-            <option value="mango">Mango</option>
-          </select>
-          <input type="submit" value="Submit" />
+      {/* make a buttons component */}
+      {/* logic needed for buttons */}
+      <form onSubmit={onSubmit}>
+        <button onClick={onChange} value="Mountain">Mountain</button>
+        <button onClick={onChange} value="Bird">Bird</button>
+        <button onClick={onChange} value="Food">Food</button>
+        <button onClick={onChange} value="Anime">Anime</button>
       </form>
 
       <Routes>
