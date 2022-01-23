@@ -87,7 +87,7 @@ export default function App() {
   return (
     <>
       {/* make search bar a component*/}
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} autocomplete="off">
         <input onChange={onChange} id='query' value={searchQuery.query} type="search" placeholder="Search..."></input>
       </form>
 
