@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import fetchData from './services/giphyService'
 import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
+// Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container'
 
 // Route Components
 import Giphs from "./routes/trend/Giphs";
@@ -82,7 +84,7 @@ export default function App() {
   },[trendQuery, searchQuery, key, selfNavigate])
 
   return (
-    <>
+    <Container>
       {/* make search bar a component*/}
       <form onSubmit={onSubmit} autoComplete="off">
         <input onChange={onChange} id='query' value={searchQuery.query} type="search" placeholder="Search..."></input>
@@ -103,7 +105,7 @@ export default function App() {
         <Route path='/search' element={<Giphs data={searchQuery.searchData} />}/>
       </Routes>
 
-    </>
+    </Container>
   );
 }
 
