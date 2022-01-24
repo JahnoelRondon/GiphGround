@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import fetchData from './services/giphyService'
 import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Route Components
 import Giphs from "./routes/trend/Giphs";
@@ -98,8 +99,8 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Navigate replace to='/trending'/>}/>
-        <Route path='trending' element={<Giphs trendData={trendQuery.trendData} />}/>
-        <Route path='/search' element={<Giphs trendData={searchQuery.searchData} />}/>
+        <Route path='trending' element={<Giphs data={trendQuery.trendData} />}/>
+        <Route path='/search' element={<Giphs data={searchQuery.searchData} />}/>
       </Routes>
 
     </>

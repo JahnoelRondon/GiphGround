@@ -1,13 +1,15 @@
 import React from 'react';
-import TrendImage from './GiphImage'
+import GiphImage from './GiphImage'
+import Container from 'react-bootstrap/Container'
 
-export default function TrendGiphs({trendData}) {
-  // console.log(trendData);
+export default function Giphs({data}) {
   return (
-      <div>
-        {trendData && trendData.map(giph => (
-          <TrendImage key={giph.id} giph={giph} />
+      <Container fluid='md'>
+
+        {data && data.map(giph => (
+          <GiphImage key={giph.id} giph={giph} />
         ))}
-      </div>
+
+      </Container>
   );
 }
