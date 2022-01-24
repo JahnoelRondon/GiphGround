@@ -5,8 +5,11 @@ import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 
-// Route Components
+//Components
 import Giphs from "./routes/trend/Giphs";
+import SearchBar from './components/SearchBar'
+import ButtonSelectors from './components/ButtonSelectors'
+
 
 export default function App() {
 
@@ -85,19 +88,17 @@ export default function App() {
 
   return (
     <Container>
-      {/* make search bar a component*/}
-      <form onSubmit={onSubmit} autoComplete="off">
-        <input onChange={onChange} id='query' value={searchQuery.query} type="search" placeholder="Search..."></input>
-      </form>
 
-      {/* make a buttons component */}
-      {/* logic needed for buttons */}
-      <form onSubmit={onSubmit}>
-        <button onClick={onChange} value="Mountain">Mountain</button>
-        <button onClick={onChange} value="Bird">Bird</button>
-        <button onClick={onChange} value="Food">Food</button>
-        <button onClick={onChange} value="Anime">Anime</button>
-      </form>
+      <SearchBar 
+        onSubmit={onSubmit}
+        onChange={onChange}
+        searchQuery={searchQuery}
+      />
+
+      <ButtonSelectors
+        onSubmit={onSubmit}
+        onChange={onChange}
+      />
 
       <Routes>
         <Route path="/" element={<Navigate replace to='/trending'/>}/>
