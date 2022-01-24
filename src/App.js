@@ -10,7 +10,7 @@ export default function App() {
 
   const selfNavigate = useNavigate();
   const key = `?api_key=${process.env.REACT_APP_GIPHYKEY}`;
-  const limitSet = '&limit=25';
+  const limitSet = '&limit=28';
   const ratingSet = '&rating=pg-13';
 
   const [trendQuery, setTrend] = useState({
