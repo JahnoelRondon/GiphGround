@@ -7,8 +7,7 @@ import Container from 'react-bootstrap/Container'
 
 //Components
 import Giphs from "./routes/trend/Giphs";
-import SearchBar from './components/SearchBar'
-import ButtonSelectors from './components/ButtonSelectors'
+import Header from './components/Header'
 
 
 export default function App() {
@@ -89,15 +88,11 @@ export default function App() {
   return (
     <Container>
 
-      <SearchBar 
+      {/* wrap the Title, search bar, and button selector in a header and stack them */}
+      <Header 
         onSubmit={onSubmit}
         onChange={onChange}
         searchQuery={searchQuery}
-      />
-
-      <ButtonSelectors
-        onSubmit={onSubmit}
-        onChange={onChange}
       />
 
       <Routes>
