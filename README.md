@@ -7,7 +7,7 @@
     <li>Giphy API</li>
     <li>Bootstrap</li>
     <li>React Router v6</li>
-    <li>Sass</li>
+    <li>Styled Components</li>
 </ul>
 
 ## Future Updates

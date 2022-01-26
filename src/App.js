@@ -1,14 +1,18 @@
 import { useState, useEffect } from "react";
 import fetchData from './services/giphyService'
 import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
+
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container'
 
-//Components
+// Components
 import Giphs from "./routes/trend/Giphs";
 import Header from './components/Header'
 
+// Styled components
+import {ThemeProvider} from 'styled-components'
+import {lightTheme, darkTheme, GlobalStyle} from './components/styled/GlobalStyle'
 
 export default function App() {
 
@@ -36,6 +40,8 @@ export default function App() {
     bird: 'bird'
   })
 
+  const [theme, setTheme] = useState(darkTheme)
+
   // search submit
   const onChange = (e) => {
     setSearch({...searchQuery, 
@@ -50,6 +56,10 @@ export default function App() {
       searchEndPoint: `${searchQuery.baseUrl}${key}&q=${searchQuery.query}${limitSet}${ratingSet}`, 
       query: ''
     })
+  }
+
+  const themeToggle = () => {
+    theme === lightTheme ? setTheme(darkTheme) : setTheme(lightTheme);
   }
 
   // useEffect should always be used at the top level
@@ -86,21 +96,27 @@ export default function App() {
   },[trendQuery, searchQuery, key, selfNavigate])
 
   return (
-    <Container>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle/>
+      <Container>
 
-      <Header 
-        onSubmit={onSubmit}
-        onChange={onChange}
-        searchQuery={searchQuery}
-      />
+        <Header 
+          onSubmit={onSubmit}
+          onChange={onChange}
+          searchQuery={searchQuery}
+          themeToggle={themeToggle}
+          theme={theme}
+        />
 
-      <Routes>
-        <Route path="/" element={<Navigate replace to='/trending'/>}/>
-        <Route path='trending' element={<Giphs data={trendQuery.trendData} />}/>
-        <Route path='/search' element={<Giphs data={searchQuery.searchData} />}/>
-      </Routes>
+        <Routes>
+          <Route path="/" element={<Navigate replace to='/trending'/>}/>
+          <Route path='trending' element={<Giphs data={trendQuery.trendData} />}/>
+          <Route path='/search' element={<Giphs data={searchQuery.searchData} />}/>
+        </Routes>
 
-    </Container>
+      </Container>
+    </ThemeProvider>
+
   );
 }
 
