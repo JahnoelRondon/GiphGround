@@ -88,7 +88,6 @@ export default function App() {
   return (
     <Container>
 
-      {/* wrap the Title, search bar, and button selector in a header and stack them */}
       <Header 
         onSubmit={onSubmit}
         onChange={onChange}
