@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import fetchData from './services/giphyService'
 import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
+// Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container'
 
-// Route Components
+//Components
 import Giphs from "./routes/trend/Giphs";
+import Header from './components/Header'
+
 
 export default function App() {
 
   const selfNavigate = useNavigate();
   const key = `?api_key=${process.env.REACT_APP_GIPHYKEY}`;
-  const limitSet = '&limit=25';
+  const limitSet = '&limit=28';
   const ratingSet = '&rating=pg-13';
 
   const [trendQuery, setTrend] = useState({
@@ -81,28 +86,21 @@ export default function App() {
   },[trendQuery, searchQuery, key, selfNavigate])
 
   return (
-    <>
-      {/* make search bar a component*/}
-      <form onSubmit={onSubmit} autoComplete="off">
-        <input onChange={onChange} id='query' value={searchQuery.query} type="search" placeholder="Search..."></input>
-      </form>
+    <Container>
 
-      {/* make a buttons component */}
-      {/* logic needed for buttons */}
-      <form onSubmit={onSubmit}>
-        <button onClick={onChange} value="Mountain">Mountain</button>
-        <button onClick={onChange} value="Bird">Bird</button>
-        <button onClick={onChange} value="Food">Food</button>
-        <button onClick={onChange} value="Anime">Anime</button>
-      </form>
+      <Header 
+        onSubmit={onSubmit}
+        onChange={onChange}
+        searchQuery={searchQuery}
+      />
 
       <Routes>
         <Route path="/" element={<Navigate replace to='/trending'/>}/>
-        <Route path='trending' element={<Giphs trendData={trendQuery.trendData} />}/>
-        <Route path='/search' element={<Giphs trendData={searchQuery.searchData} />}/>
+        <Route path='trending' element={<Giphs data={trendQuery.trendData} />}/>
+        <Route path='/search' element={<Giphs data={searchQuery.searchData} />}/>
       </Routes>
 
-    </>
+    </Container>
   );
 }
 

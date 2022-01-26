@@ -1,13 +1,20 @@
 import React from 'react';
-import TrendImage from './GiphImage'
+import GiphImage from './GiphImage'
 
-export default function TrendGiphs({trendData}) {
-  // console.log(trendData);
+// Bootstrap
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+
+
+export default function Giphs({data}) {
   return (
-      <div>
-        {trendData && trendData.map(giph => (
-          <TrendImage key={giph.id} giph={giph} />
+      <Row>
+        {data && data.map(giph => (
+          // Col must be a flex so it can center the giphImage
+          <Col xs={12} lg={4} xxl={3} className='d-flex justify-content-center mb-3 mt-3'>
+            <GiphImage key={giph.id} giph={giph} />
+          </Col>
         ))}
-      </div>
+      </Row>
   );
 }
