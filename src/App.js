@@ -1,24 +1,22 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 import fetchData from './services/giphyService'
 import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
-import {FaLinkedin, FaGithub} from 'react-icons/fa'
 
 // Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Container from 'react-bootstrap/Container'
 
 // Components
-import Giphs from "./routes/trend/Giphs";
+import Giphs from "./routes/trend/Giphs"
 import Header from './components/Header'
+import DevelopedContainer from './components/DevelopedContainer'
+import Contact from './components/Contact'
 
 // Styled components
 import {ThemeProvider} from 'styled-components'
-
 import {
   lightTheme, 
   darkTheme, 
-  HeadContainer, 
-  FooterContainer,
   GlobalStyle
 } 
 from './components/styled/GlobalStyle'
@@ -108,10 +106,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
 
-      {/* make into a component*/}
-      <HeadContainer>
-        <p><a href="https://github.com/JahnoelRondon/GiphGround">~ Developed and Designed by Jahnoel Rondon 2022 ~</a></p>
-      </HeadContainer>
+      <DevelopedContainer />
 
       <Container>
 
@@ -131,18 +126,7 @@ export default function App() {
 
       </Container>
 
-      {/* make into a component */}
-      <FooterContainer>
-        <p>
-          Hope you Enjoyed! Feel free to contact me
-          <a href='https://www.linkedin.com/in/jahnoel-rondon/' target="_blank" rel="noreferrer" >
-            <FaLinkedin />
-          </a>
-          <a href='https://github.com/JahnoelRondon' target="_blank" rel="noreferrer" >
-            <FaGithub />
-          </a>
-        </p>
-      </FooterContainer>
+      <Contact />
 
     </ThemeProvider>
 
