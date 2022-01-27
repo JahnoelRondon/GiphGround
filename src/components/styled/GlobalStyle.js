@@ -20,10 +20,18 @@ export const HeadContainer = styled.div`
     transition: all 0.5s;
 
     p {
-        color: white;
         font-size: 18px;
         text-align: center;
         line-height: 60px;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: wheat;
     }
 
     @media only screen and (max-width: 600px) {

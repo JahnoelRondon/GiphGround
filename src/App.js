@@ -110,7 +110,7 @@ export default function App() {
 
       {/* make into a component*/}
       <HeadContainer>
-        <p>Developed and Designed by Jahnoel Rondon 2022</p>
+        <p><a href="https://github.com/JahnoelRondon/GiphGround">~ Developed and Designed by Jahnoel Rondon 2022 ~</a></p>
       </HeadContainer>
 
       <Container>

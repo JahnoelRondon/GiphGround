@@ -12,10 +12,20 @@ export default function ButtonSelectors({onSubmit, onChange, theme}) {
             type='input' 
             onClick={onChange} 
             variant={theme.body === '#fff' ? 'outline-dark' : 'primary'} 
-            value="Birthday" 
+            value="Food" 
             size='sm'
             active>
-            Birthday
+              Food
+          </Button>
+
+          <Button 
+            type='input' 
+            onClick={onChange} 
+            variant={theme.body === '#fff' ? 'outline-dark' : 'primary'} 
+            value="NBA" 
+            size='sm'
+            active>
+            NBA
           </Button>{' '}
 
           <Button 
@@ -26,16 +36,6 @@ export default function ButtonSelectors({onSubmit, onChange, theme}) {
             size='sm'
             active>
               Dog
-          </Button>
-
-          <Button 
-            type='input' 
-            onClick={onChange} 
-            variant={theme.body === '#fff' ? 'outline-dark' : 'primary'} 
-            value="Food" 
-            size='sm'
-            active>
-              Food
           </Button>
 
           <Button 

@@ -11,6 +11,20 @@ export default function Header({onSubmit, onChange, searchQuery, themeToggle, th
   return (
       <Stack gap={3} className='m-3'>
 
+        <Button 
+          className='mx-auto' 
+          onClick={themeToggle} 
+          style={{width: '140px'}} 
+          size='sm'
+          variant={theme.body === '#fff' ? 'outline-dark' : 'primary'}>
+            {/* conditional title */}
+            {theme.body === '#fff' ? 'Dark' : 'Light'} Mode
+            {/* conditional svg icon */}
+            {theme.body === '#fff' ? 
+            <WiMoonAltWaningGibbous2 style={{fontSize: '24px'}}/> : 
+            <WiMoonAltWaningCrescent6 style={{fontSize: '24px'}}/>}
+        </Button>
+
         <h1 className='mx-auto' style={{color: theme.fontColor}}>GiphGround</h1>
 
         <SearchBar 
@@ -24,19 +38,6 @@ export default function Header({onSubmit, onChange, searchQuery, themeToggle, th
           onChange={onChange}
           theme={theme}
         />
-
-        <Button 
-          className='mx-auto' 
-          onClick={themeToggle} 
-          style={{width: '100px'}} 
-          variant={theme.body === '#fff' ? 'outline-dark' : 'primary'}>
-            {/* conditional title */}
-            {theme.body === '#fff' ? 'Dark' : 'Light'} 
-            {/* conditional svg icon */}
-            {theme.body === '#fff' ? 
-            <WiMoonAltWaningGibbous2 style={{fontSize: '20px'}}/> : 
-            <WiMoonAltWaningCrescent6 style={{fontSize: '20px'}}/>}
-        </Button>
 
       </Stack>
   );

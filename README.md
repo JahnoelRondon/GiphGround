@@ -5,6 +5,8 @@ Inspired by Giphy and Reacts project example "Snap Shot" GiphGround was made for
 Get your Giph on and start searching!
 You can see Giphy's top trending memes that change daily, or view by categories in the app.
 
+This by far was the hardest project to focus on considering the amount of giphs I looked at while making the app but also kept me entertained.
+
 ## Tech Used
 
 <ul>
