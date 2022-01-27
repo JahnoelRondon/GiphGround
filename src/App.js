@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import fetchData from './services/giphyService'
 import {Route, Routes, Navigate, useNavigate} from 'react-router-dom'
+import {FaLinkedin, FaGithub} from 'react-icons/fa'
 
 // Bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -12,7 +13,15 @@ import Header from './components/Header'
 
 // Styled components
 import {ThemeProvider} from 'styled-components'
-import {lightTheme, darkTheme, GlobalStyle} from './components/styled/GlobalStyle'
+
+import {
+  lightTheme, 
+  darkTheme, 
+  HeadContainer, 
+  FooterContainer,
+  GlobalStyle
+} 
+from './components/styled/GlobalStyle'
 
 export default function App() {
 
@@ -98,6 +107,12 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle/>
+
+      {/* make into a component*/}
+      <HeadContainer>
+        <p>Developed and Designed by Jahnoel Rondon 2022</p>
+      </HeadContainer>
+
       <Container>
 
         <Header 
@@ -115,6 +130,20 @@ export default function App() {
         </Routes>
 
       </Container>
+
+      {/* make into a component */}
+      <FooterContainer>
+        <p>
+          Hope you Enjoyed! Feel free to contact me
+          <a href='https://www.linkedin.com/in/jahnoel-rondon/' target="_blank" rel="noreferrer" >
+            <FaLinkedin />
+          </a>
+          <a href='https://github.com/JahnoelRondon' target="_blank" rel="noreferrer" >
+            <FaGithub />
+          </a>
+        </p>
+      </FooterContainer>
+
     </ThemeProvider>
 
   );

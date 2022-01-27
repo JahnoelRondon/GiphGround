@@ -1,11 +1,12 @@
 # GiphGround
 
-Inspired by Reacts project example "Snap Shot" GiphGround was made for use meme lovers.
+Inspired by Giphy and Reacts project example "Snap Shot" GiphGround was made for us meme lovers.
 
 Get your Giph on and start searching!
 You can see Giphy's top trending memes that change daily, or view by categories in the app.
 
 ## Tech Used
+
 <ul>
     <li>React</li>
     <li>Giphy API</li>

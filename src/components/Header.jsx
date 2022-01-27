@@ -28,10 +28,14 @@ export default function Header({onSubmit, onChange, searchQuery, themeToggle, th
         <Button 
           className='mx-auto' 
           onClick={themeToggle} 
-          style={{width: '200px'}} 
+          style={{width: '100px'}} 
           variant={theme.body === '#fff' ? 'outline-dark' : 'primary'}>
+            {/* conditional title */}
             {theme.body === '#fff' ? 'Dark' : 'Light'} 
-            {theme.body === '#fff' ? <WiMoonAltWaningGibbous2/> : <WiMoonAltWaningCrescent6/>}
+            {/* conditional svg icon */}
+            {theme.body === '#fff' ? 
+            <WiMoonAltWaningGibbous2 style={{fontSize: '20px'}}/> : 
+            <WiMoonAltWaningCrescent6 style={{fontSize: '20px'}}/>}
         </Button>
 
       </Stack>
