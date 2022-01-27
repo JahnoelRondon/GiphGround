@@ -22,10 +22,16 @@ export default function Header({onSubmit, onChange, searchQuery, themeToggle, th
         <ButtonSelectors
           onSubmit={onSubmit}
           onChange={onChange}
+          theme={theme}
         />
 
-        <Button className='mx-auto' onClick={themeToggle} style={{width: '200px'}}>
-          Theme {theme.body === '#fff' ? <WiMoonAltWaningGibbous2/> : <WiMoonAltWaningCrescent6/>}
+        <Button 
+          className='mx-auto' 
+          onClick={themeToggle} 
+          style={{width: '200px'}} 
+          variant={theme.body === '#fff' ? 'outline-dark' : 'primary'}>
+            {theme.body === '#fff' ? 'Dark' : 'Light'} 
+            {theme.body === '#fff' ? <WiMoonAltWaningGibbous2/> : <WiMoonAltWaningCrescent6/>}
         </Button>
 
       </Stack>

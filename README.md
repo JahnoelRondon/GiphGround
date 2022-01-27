@@ -1,5 +1,9 @@
 # GiphGround
 
+Inspired by Reacts project example "Snap Shot" GiphGround was made for use meme lovers.
+
+Get your Giph on and start searching!
+You can see Giphy's top trending memes that change daily, or view by categories in the app.
 
 ## Tech Used
 <ul>
@@ -12,4 +16,4 @@
 
 ## Future Updates
 
-In the future code wise we would like to change write our statemanagent to context api and the website change theme's using a context provider. 
+In the future code wise I would like to change my state managent to context api.
