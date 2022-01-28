@@ -9,7 +9,7 @@ You can see Giphy's top trending memes that change daily, or view by categories 
 
 This by far was the hardest project to focus on considering the amount of giphs I looked at while making the app but also kept me entertained.
 
-<img src='https://imgur.com/a/1nbQELv'>
+![GiphGround](https://imgur.com/a/1nbQELv)
 
 
 ## Tech Used
