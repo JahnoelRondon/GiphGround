@@ -25,7 +25,14 @@ export default function Header({onSubmit, onChange, searchQuery, themeToggle, th
             <WiMoonAltWaningCrescent6 style={{fontSize: '24px'}}/>}
         </Button>
 
-        <h1 className='mx-auto' style={{color: theme.fontColor}}>GiphGround</h1>
+        <h1 className='mx-auto' style={
+            {
+              color: theme.fontColor, 
+              letterSpacing: '2.5px',
+              fontFamily: 'Calistoga'
+          }}>
+            GiphGround
+        </h1>
 
         <SearchBar 
           onSubmit={onSubmit}
