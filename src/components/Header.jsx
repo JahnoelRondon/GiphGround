@@ -31,7 +31,7 @@ export default function Header({onSubmit, onChange, searchQuery, themeToggle, th
               letterSpacing: '2.5px',
               fontFamily: 'Calistoga'
           }}>
-            GiphGround
+            Giph Ground
         </h1>
 
         <SearchBar 
