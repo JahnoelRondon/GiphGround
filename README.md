@@ -19,7 +19,7 @@ This by far was the hardest project to focus on considering the amount of giphs 
     <li>Giphy API</li>
     <li>Bootstrap</li>
     <li>React Router v6</li>
-    <li>Styled Components</li>
+    <li>Custom Styled Components</li>
 </ul>
 
 ## Future Updates
