@@ -3,7 +3,7 @@ import {Image} from 'react-bootstrap';
 export default function GiphImage({giph}) {
     
     return (
-        <a href={giph.images.downsized.url} target="_blank">
+        <a href={giph.images.downsized.url} target="_blank" rel="noreferrer">
             <Image 
                 rounded={true} 
                 width="300px" 
