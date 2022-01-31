@@ -42,9 +42,7 @@ export default function App() {
     query: '',
     searchEndPoint: '',
     // Data retrieved and stored from api
-    searchData: [],
-    // categories for buttons
-    bird: 'bird'
+    searchData: []
   })
 
   const [theme, setTheme] = useState(darkTheme)
